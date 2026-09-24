@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Résumé — Thamires A. Lima</title><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%94%AC%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Spectral:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<style>/* ============================================================================
+   Marcelo Der Torossian Torres — academic site preview
+   Black-first theme with light/dark toggle. Restrained accent.
+   ============================================================================ */
+:root {
+  --bg:        #0a0a0b;
+  --bg-soft:   #111113;
+  --card:      #141417;
+  --card-2:    #1a1a1e;
+  --border:    #26262b;
+  --border-2:  #33333a;
+  --text:      #e9e9ec;
+  --text-2:    #b4b4bc;
+  --muted:     #7d7d88;
+  --accent:    #5bb2ff;
+  --accent-2:  #8fd0ff;
+  --accent-dim:#1a3a55;
+  --star:      #ffd166;
+  --serif: "Spectral", Georgia, "Times New Roman", serif;
+  --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --maxw: 880px;
+}
+[data-theme="light"] {
+  --bg:        #fbfbfc;
+  --bg-soft:   #f3f3f5;
+  --card:      #ffffff;
+  --card-2:    #f6f7f9;
+  --border:    #e4e4e9;
+  --border-2:  #d5d5dc;
+  --text:      #16161a;
+  --text-2:    #3c3c44;
+  --muted:     #6c6c78;
+  --accent:    #1f6feb;
+  --accent-2:  #1a5fd0;
+  --accent-dim:#d7e6ff;
+  --star:      #c68a00;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0; background: var(--bg); color: var(--text);
+  font-family: var(--sans); font-size: 16.5px; line-height: 1.65;
+  -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+}
+.wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 22px; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { color: var(--accent-2); text-decoration: underline; text-underline-offset: 3px; }
+h1,h2,h3 { font-family: var(--serif); font-weight: 600; line-height: 1.2; letter-spacing: -0.01em; }
+
+/* progress bar */
+#progress { position: fixed; top: 0; left: 0; height: 2px; width: 0;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2)); z-index: 100; }
+
+/* nav */
+nav { position: sticky; top: 0; z-index: 50;
+  background: color-mix(in srgb, var(--bg) 82%, transparent);
+  backdrop-filter: saturate(140%) blur(10px);
+  border-bottom: 1px solid var(--border); }
+nav .wrap { display: flex; align-items: center; gap: 20px; height: 60px; }
+.brand { font-family: var(--serif); font-weight: 600; font-size: 1.02rem; color: var(--text);
+  letter-spacing: .01em; margin-right: auto; }
+.brand:hover { text-decoration: none; color: var(--accent); }
+.navlinks { display: flex; gap: 20px; align-items: center; }
+.navlinks a { color: var(--text-2); font-size: .93rem; font-weight: 500; }
+.navlinks a:hover { color: var(--text); text-decoration: none; }
+.navlinks a.active { color: var(--accent); }
+.toggle { background: var(--card); border: 1px solid var(--border-2); color: var(--text-2);
+  width: 34px; height: 34px; border-radius: 8px; cursor: pointer; font-size: 15px;
+  display: grid; place-items: center; transition: .15s; }
+.toggle:hover { color: var(--text); border-color: var(--accent); }
+@media (max-width: 620px){ .navlinks a { display: none; } .navlinks a.mini { display: inline; } }
+
+/* hero */
+.hero { padding: 60px 0 34px; }
+.hero-grid { display: grid; grid-template-columns: 168px 1fr; gap: 34px; align-items: start; }
+@media (max-width: 620px){ .hero-grid { grid-template-columns: 1fr; gap: 22px; text-align: center; } }
+.avatar { width: 168px; height: 168px; border-radius: 16px; object-fit: cover;
+  border: 1px solid var(--border-2); background: var(--card); }
+@media (max-width: 620px){ .avatar { margin: 0 auto; width: 150px; height: 150px; } }
+.hero h1 { font-size: 2.15rem; margin: 0 0 4px; }
+.role { color: var(--accent); font-weight: 600; font-size: 1.04rem; }
+.affil { color: var(--text-2); font-size: .98rem; margin-top: 2px; }
+.bio { color: var(--text-2); margin-top: 16px; }
+.bio p { margin: 0 0 12px; }
+.links { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 18px; }
+@media (max-width: 620px){ .links { justify-content: center; } }
+.chip { display: inline-flex; align-items: center; gap: 7px; font-size: .86rem; font-weight: 500;
+  padding: 7px 13px; border: 1px solid var(--border-2); border-radius: 999px;
+  color: var(--text-2); background: var(--card); transition: .15s; }
+.chip:hover { color: var(--text); border-color: var(--accent); text-decoration: none;
+  transform: translateY(-1px); }
+.chip.ph { opacity: .6; border-style: dashed; }
+.chip i { color: var(--accent); }
+
+/* sections */
+section { padding: 34px 0; border-top: 1px solid var(--border); }
+.sec-head { display: flex; align-items: baseline; justify-content: space-between; margin: 0 0 20px; }
+.sec-head h2 { font-size: 1.5rem; margin: 0; }
+.sec-head .more { font-size: .9rem; font-weight: 500; }
+.kicker { text-transform: uppercase; letter-spacing: .14em; font-size: .72rem; color: var(--muted);
+  font-family: var(--sans); font-weight: 600; }
+
+/* affiliations logo row */
+.logos { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; }
+.logo { flex: 1 1 auto; min-width: 150px; display: flex; align-items: center; gap: 11px;
+  padding: 14px 16px; border: 1px solid var(--border); border-radius: 12px; background: var(--card);
+  color: var(--text-2); transition: .18s; }
+.logo:hover { color: var(--text); border-color: var(--accent); text-decoration: none;
+  background: var(--card-2); transform: translateY(-2px); }
+.logo svg { flex: 0 0 auto; opacity: .82; }
+.logo:hover svg { opacity: 1; }
+.logo .lg-name { font-family: var(--serif); font-weight: 600; font-size: .93rem; line-height: 1.15; }
+.logo .lg-sub { font-size: .72rem; color: var(--muted); }
+.logo.peptaris .pep-logo { display: flex; align-items: center; }
+.logo.peptaris .pep-logo svg { height: 30px; width: auto; display: block; }
+.logo .uni-logo { height: 30px; width: auto; max-width: 132px; object-fit: contain;
+  filter: brightness(0) invert(1); opacity: .80; transition: filter .18s, opacity .18s; }
+.logo:hover .uni-logo { filter: none; opacity: 1; }
+[data-theme="light"] .logo .uni-logo { filter: brightness(0); opacity: .72; }
+[data-theme="light"] .logo:hover .uni-logo { filter: none; opacity: 1; }
+
+/* news */
+.news { display: flex; flex-direction: column; gap: 2px; }
+.news-item { display: grid; grid-template-columns: 96px 1fr; gap: 14px; padding: 12px 0;
+  border-bottom: 1px dashed var(--border); }
+@media (max-width: 620px){ .news-item { grid-template-columns: 1fr; gap: 2px; } }
+.news-date { color: var(--muted); font-size: .84rem; font-variant-numeric: tabular-nums; padding-top: 2px; }
+.news-body { color: var(--text-2); font-size: .96rem; }
+.draft { display: inline-block; font-size: .64rem; font-weight: 700; letter-spacing: .08em;
+  color: var(--star); border: 1px solid color-mix(in srgb, var(--star) 45%, transparent);
+  border-radius: 5px; padding: 1px 6px; margin-left: 8px; vertical-align: middle; }
+
+/* research themes */
+.themes { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 620px){ .themes { grid-template-columns: 1fr; } }
+.theme { padding: 20px; border: 1px solid var(--border); border-radius: 14px; background: var(--card);
+  transition: .18s; }
+.theme:hover { border-color: var(--border-2); background: var(--card-2); }
+.theme h3 { font-size: 1.08rem; margin: 0 0 8px; color: var(--text); }
+.theme .tnum { font-family: var(--serif); color: var(--accent); font-size: .9rem; }
+.theme p { color: var(--text-2); font-size: .92rem; margin: 0 0 12px; }
+.theme .rep { font-size: .82rem; color: var(--muted); }
+.theme .rep a { font-weight: 500; }
+
+/* publications */
+.pub { padding: 14px 0; border-bottom: 1px solid var(--border); font-size: .96rem; }
+.pub .cite { color: var(--text-2); }
+.pub .cite strong { color: var(--text); font-weight: 700; }
+.pub .cite u { text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 2px; }
+.pub .meta { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 9px; align-items: center; }
+.badge { font-size: .74rem; font-weight: 600; padding: 3px 9px; border-radius: 6px;
+  border: 1px solid var(--border-2); color: var(--text-2); background: var(--card); transition: .15s; }
+.badge:hover { color: var(--text); border-color: var(--accent); text-decoration: none; }
+.badge.doi i, .badge.link i { color: var(--accent); }
+.tag { font-size: .7rem; font-weight: 600; letter-spacing: .02em; padding: 2px 8px; border-radius: 999px;
+  color: var(--accent-2); background: var(--accent-dim); border: 1px solid transparent; }
+.star { color: var(--star); margin-right: 7px; }
+.yearhead { font-family: var(--serif); font-size: 1.28rem; color: var(--text); margin: 26px 0 4px;
+  padding-top: 12px; }
+.subhead { font-family: var(--serif); font-size: 1.32rem; margin: 34px 0 6px; color: var(--text);
+  border-top: 2px solid var(--border-2); padding-top: 22px; }
+.subhead .note { font-family: var(--sans); font-size: .8rem; color: var(--muted); font-weight: 400; }
+
+/* filter bar */
+.filterbar { position: sticky; top: 60px; z-index: 20; background: var(--bg);
+  padding: 14px 0 12px; border-bottom: 1px solid var(--border); margin-bottom: 8px; }
+.filters { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.fbtn { font-size: .82rem; font-weight: 500; padding: 6px 13px; border-radius: 999px; cursor: pointer;
+  border: 1px solid var(--border-2); color: var(--text-2); background: var(--card); transition: .15s; }
+.fbtn:hover { color: var(--text); border-color: var(--accent); }
+.fbtn.on { color: #061019; background: var(--accent); border-color: var(--accent); font-weight: 600; }
+[data-theme="light"] .fbtn.on { color: #fff; }
+.searchbox { margin-left: auto; }
+.searchbox input { background: var(--card); border: 1px solid var(--border-2); color: var(--text);
+  padding: 7px 12px; border-radius: 999px; font-size: .85rem; width: 180px; font-family: var(--sans); }
+.searchbox input:focus { outline: none; border-color: var(--accent); }
+.count { color: var(--muted); font-size: .82rem; margin: 10px 0 0; }
+.pub.hide, .yearhead.hide, .subhead.hide { display: none; }
+
+/* cv */
+.cv-item { display: grid; grid-template-columns: 132px 1fr; gap: 16px; padding: 13px 0;
+  border-bottom: 1px solid var(--border); }
+@media (max-width: 620px){ .cv-item { grid-template-columns: 1fr; gap: 2px; } }
+.cv-when { color: var(--muted); font-size: .86rem; font-variant-numeric: tabular-nums; padding-top: 2px; }
+.cv-what h3 { font-size: 1.02rem; margin: 0 0 2px; color: var(--text); }
+.cv-what .where { color: var(--text-2); font-size: .93rem; }
+.cv-what .desc { color: var(--muted); font-size: .86rem; margin-top: 3px; }
+.cv-list { list-style: none; padding: 0; margin: 0; }
+.cv-list li { padding: 10px 0; border-bottom: 1px solid var(--border); color: var(--text-2); font-size: .94rem; }
+.cv-list li strong { color: var(--text); }
+.patent-id { font-size: .78rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.dlbtn { display: inline-flex; align-items: center; gap: 8px; padding: 9px 16px; border-radius: 10px;
+  background: var(--accent); color: #061019; font-weight: 600; font-size: .9rem; border: none; }
+[data-theme="light"] .dlbtn { color: #fff; }
+.dlbtn:hover { text-decoration: none; background: var(--accent-2); transform: translateY(-1px); }
+
+/* footer */
+footer { border-top: 1px solid var(--border); padding: 34px 0 60px; margin-top: 20px; color: var(--muted);
+  font-size: .86rem; }
+.foot-links { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 14px; }
+.foot-links a { color: var(--text-2); font-size: 1.15rem; }
+.foot-links a:hover { color: var(--accent); }
+.notice { background: var(--card); border: 1px solid var(--border-2); border-left: 3px solid var(--accent);
+  border-radius: 8px; padding: 12px 16px; margin: 18px 0; font-size: .86rem; color: var(--text-2); }
+.notice strong { color: var(--text); }
+</style>
+<script>/* theme toggle + publication filtering (standalone, works over file://) */
+(function () {
+  var root = document.documentElement;
+  var KEY = "mdt-theme";
+  function apply(t){ root.setAttribute("data-theme", t);
+    var b=document.getElementById("themebtn"); if(b) b.textContent = (t==="light"?"☾":"☀"); }
+  var saved = "dark";
+  try { saved = localStorage.getItem(KEY) || "dark"; } catch(e){}
+  apply(saved);
+  window.addEventListener("DOMContentLoaded", function () {
+    var b = document.getElementById("themebtn");
+    if (b) b.addEventListener("click", function () {
+      var t = root.getAttribute("data-theme") === "light" ? "dark" : "light";
+      apply(t); try { localStorage.setItem(KEY, t); } catch(e){}
+    });
+    // progress bar
+    var pr = document.getElementById("progress");
+    if (pr) window.addEventListener("scroll", function(){
+      var h = document.documentElement, sc = h.scrollTop, mx = h.scrollHeight - h.clientHeight;
+      pr.style.width = (mx>0 ? (sc/mx*100) : 0) + "%";
+    });
+    // publication filters
+    var bar = document.getElementById("filters");
+    if (!bar) return;
+    var current = "all";
+    function run(){
+      var q = (document.getElementById("psearch")||{value:""}).value.toLowerCase().trim();
+      var pubs = document.querySelectorAll(".pub");
+      var shown = 0;
+      pubs.forEach(function(p){
+        var okT = current === "all" || (" "+p.dataset.topics+" ").indexOf(" "+current+" ") >= 0;
+        var okQ = !q || p.textContent.toLowerCase().indexOf(q) >= 0;
+        var vis = okT && okQ;
+        p.classList.toggle("hide", !vis); if (vis) shown++;
+      });
+      // hide empty year/section headers
+      document.querySelectorAll(".yearhead,.subhead").forEach(function(h){
+        var n = h.nextElementSibling, any = false;
+        while (n && !n.classList.contains("yearhead") && !n.classList.contains("subhead")) {
+          if (n.classList.contains("pub") && !n.classList.contains("hide")) { any = true; break; }
+          n = n.nextElementSibling;
+        }
+        h.classList.toggle("hide", !any);
+      });
+      var c = document.getElementById("count");
+      if (c) c.textContent = shown + " publication" + (shown===1?"":"s") + " shown";
+    }
+    bar.addEventListener("click", function(e){
+      var t = e.target.closest(".fbtn"); if (!t) return;
+      current = t.dataset.f;
+      bar.querySelectorAll(".fbtn").forEach(function(x){ x.classList.toggle("on", x===t); });
+      run();
+    });
+    var s = document.getElementById("psearch"); if (s) s.addEventListener("input", run);
+    run();
+  });
+})();
+</script>
+</head>
+<body>
+<div id="progress"></div>
+<nav><div class="wrap">
+<a class="brand" href="index.html">Thamires&nbsp;A.&nbsp;Lima</a>
+<div class="navlinks">
+<a class="" href="index.html#about">About</a>
+<a class="" href="index.html#research">Research</a>
+<a class="" href="publications.html">Publications</a>
+<a class="active" href="resume.html">CV / Résumé</a>
+<button class="toggle" id="themebtn" aria-label="Toggle theme">☀</button>
+</div></div></nav>
+<style>.cv-bul{margin:.5rem 0 0;padding-left:1.1rem;} .cv-bul li{color:var(--text-2);font-size:.9rem;margin:.25rem 0;line-height:1.5;} .skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;} @media(max-width:620px){.skills-grid{grid-template-columns:1fr;}} .skillcard{border:1px solid var(--border);border-radius:12px;padding:16px 18px;background:var(--card);} .skillcard h4{margin:0 0 6px;font-size:.98rem;color:var(--text);} .skillcard p{margin:0;font-size:.88rem;color:var(--text-2);line-height:1.5;}</style><div class="wrap">
+<section style="border-top:none;padding-top:34px"><div class="sec-head"><h2>Résumé — Industry R&amp;D</h2>
+<a class="dlbtn" href="assets/pdf/Thamires_Lima_Resume.pdf" download><i class="fa-solid fa-download"></i> Download PDF</a></div>
+<div class="role" style="margin-bottom:.4rem">R&amp;D Senior Scientist · Spectroscopy · Materials Characterization · Analytical Problem-Solving</div>
+<div class="notice">Experimental materials scientist (Ph.D., Physics) with 18+ years of analytical laboratory experience across
+vibrational spectroscopy, X-ray/scattering, thermal/mechanical analysis, rheology, polymers, and soft matter. I translate
+complex measurements into actionable conclusions for product development, processing, manufacturing, and customer-facing
+materials challenges.</div></section>
+<section><div class="sec-head"><h2>Core technical skills</h2></div><div class="skills-grid"><div class="skillcard"><h4>Spectroscopy &amp; imaging</h4><p>Raman spectroscopy; low-frequency Raman; FTIR; vibrational spectroscopy; microscopy; chemical/structural interpretation.</p></div><div class="skillcard"><h4>Materials &amp; polymer characterization</h4><p>X-ray diffraction/scattering; neutron scattering; DSC/TGA; DMA; mechanical testing; thermal history; phase transitions; crystallization; glass formation; polymer/additive compatibility.</p></div><div class="skillcard"><h4>Rheology &amp; processing</h4><p>Shear and extensional rheology; non-Newtonian fluids; filament breakup; sprayability; injection/filling behavior; fiber spinning; nanofiber alignment; formulation–processing–property relationships.</p></div><div class="skillcard"><h4>Data, methods &amp; communication</h4><p>Experimental design; data analysis/visualization; method development; SOPs; user training; technical reports; reproducible workflows; cross-functional presentations.</p></div></div></section>
+<section><div class="sec-head"><h2>Professional experience</h2></div><div class="cv-item"><div class="cv-when">2021–2026</div><div class="cv-what"><h3>Research Assistant Professor</h3><div class="where">Drexel University — Dept. of Chemical &amp; Biological Engineering, Philadelphia, PA</div><ul class="cv-bul"><li>Led applied materials research spanning polymers, complex fluids, soft matter, fibers, gels, foams, additive-manufacturing resins, biomaterials, and structure–property relationships relevant to industrial formulation and packaging.</li><li>Developed antimicrobial active-packaging concepts using essential oils embedded in polymer networks, emphasizing polymer–additive compatibility and formulation–processing–property relationships.</li><li>Designed characterization workflows using Raman/FTIR spectroscopy, X-ray diffraction/scattering, rheology, DMA, DSC/TGA, mechanical testing, and microscopy to connect chemistry, structure, processing, and performance.</li><li>Collaborated with companies on confidential projects in shear and extensional rheology of complex products — injection/filling behavior, sprayability, and process compatibility.</li><li>Generated technical reports, experimental plans, SOPs, and user-training materials; communicated results to academic, industrial, and cross-functional stakeholders.</li></ul></div></div><div class="cv-item"><div class="cv-when">2019–2021</div><div class="cv-what"><h3>Postdoctoral / Research Scientist</h3><div class="where">Drexel University &amp; collaborating institutions, Philadelphia, PA</div><ul class="cv-bul"><li>Advanced experimental programs on nanofibers, soft materials, peptide/fibrillar systems, gels, hydrogel foams, thermosets, and complex fluids using spectroscopy, rheology, thermal analysis, and mechanical testing.</li><li>Investigated processing–structure–property relationships in polymeric and fibrous materials (alignment, diameter control, annealing, thermal kinetics).</li></ul></div></div><div class="cv-item"><div class="cv-when">2014–2018</div><div class="cv-what"><h3>Postdoctoral Scientist</h3><div class="where">University of São Paulo, UIUC, NIST &amp; collaborative programs (Brazil / USA)</div><ul class="cv-bul"><li>Built deep expertise in physical chemistry and materials characterization — Raman spectroscopy, X-ray diffraction/scattering, neutron scattering, low-temperature/high-pressure methods, and phase-transition analysis.</li><li>Studied ionic liquids, glass-forming materials, confined systems, molecular crystals, and amino-acid materials, linking molecular structure and dynamics to crystallization, glass formation, and relaxation behavior.</li><li>Trained instrument users and supported a multiuser experimental facility (SOPs, safety, reproducibility, technical communication).</li></ul></div></div></section>
+<section><div class="sec-head"><h2>Selected applied contributions</h2></div><ul class="cv-list"><li><strong>Vibrational spectroscopy &amp; structure:</strong> Raman/low-frequency Raman and FTIR to study molecular structure, phase transitions, crystallization, glass formation, peptide/fibrillar assemblies, and complex-fluid systems.</li><li><strong>Filament extension atomizers:</strong> designed and executed rheology experiments interpreting high-viscosity, non-Newtonian sprayability data — relating shear/extensional behavior to filament breakup and spray-drying performance.</li><li><strong>Solidlike fracture in liquids:</strong> connected rheology, stress analysis, and failure morphology to identify critical fracture behavior in high-viscosity simple liquids.</li><li><strong>Polymer/fiber platforms:</strong> fiber spinning, post-drawing, nanofiber yarn fabrication, alignment, annealing, thermal/mechanical testing, and performance-driven optimization.</li></ul></section>
+<section><div class="sec-head"><h2>Education</h2></div><div class="cv-item"><div class="cv-when"></div><div class="cv-what"><h3>Ph.D., Physics</h3><div class="where">Federal University of ABC (UFABC), Brazil</div></div></div><div class="cv-item"><div class="cv-when"></div><div class="cv-what"><h3>M.Sc., Physics</h3><div class="where">Federal University of ABC (UFABC), Brazil</div></div></div><div class="cv-item"><div class="cv-when"></div><div class="cv-what"><h3>B.Sc., Physics</h3><div class="where">Federal University of Sergipe (UFS), Brazil</div></div></div></section>
+<section><div class="sec-head"><h2>Selected publications</h2><a class="more" href="publications.html">All publications →</a></div>
+<div class="cv-list" style="border:none;padding:0"><div class="pub" data-topics="soft" data-year="2026"><div class="cite"><span class="star" title="Selected publication">★</span>Unexpected Solidlike Fracture in Simple Liquids. <em>Physical Review Letters 136, 124002</em> (2026).</div><div class="meta"><span class="tag">Soft matter &amp; rheology</span></div></div><div class="pub" data-topics="soft" data-year="2026"><div class="cite"><span class="star" title="Selected publication">★</span>Filament Extension Atomizers: A Study of Integration Potential into Spray Dryers for High-Viscosity and Non-Newtonian Fluids. <em>Physics of Fluids 38, 023331</em> (2026).</div><div class="meta"><span class="tag">Soft matter &amp; rheology</span></div></div><div class="pub" data-topics="spec pep" data-year="2024"><div class="cite"><span class="star" title="Selected publication">★</span>Determining the Nanostructure and Main Axis of Gly-His-Gly Fibrils Using the Amide I′ Bands in FTIR, VCD, and Raman Spectra. <em>Spectrochimica Acta A 306, 123584</em> (2024).</div><div class="meta"><span class="tag">Spectroscopy &amp; scattering</span><span class="tag">Peptides &amp; biomaterials</span></div></div><div class="pub" data-topics="poly" data-year="2023"><div class="cite"><span class="star" title="Selected publication">★</span>High Performance Thermosets for Additive Manufacturing. <em>Innovation and Emerging Technologies 10, 2330003</em> (2023).</div><div class="meta"><span class="tag">Polymers &amp; fibers</span></div></div><div class="pub" data-topics="spec ionic" data-year="2021"><div class="cite"><span class="star" title="Selected publication">★</span>Vibrational Spectroscopy and MD Simulation of Choline Oxyanion Salts. <em>Journal of Molecular Liquids 340, 117100</em> (2021).</div><div class="meta"><span class="tag">Spectroscopy &amp; scattering</span><span class="tag">Ionic liquids &amp; glass</span></div></div><div class="pub" data-topics="spec ionic" data-year="2020"><div class="cite"><span class="star" title="Selected publication">★</span>An Inelastic Neutron Scattering, Raman, Far-Infrared, and Molecular Dynamics Study of the Intermolecular Dynamics of Two Ionic Liquids. <em>Physical Chemistry Chemical Physics 22, 9074</em> (2020).</div><div class="meta"><span class="tag">Spectroscopy &amp; scattering</span><span class="tag">Ionic liquids &amp; glass</span></div></div><div class="pub" data-topics="spec ionic" data-year="2019"><div class="cite"><span class="star" title="Selected publication">★</span>Low-Frequency Raman Spectra of a Glass-Forming Ionic Liquid at Low Temperature and High Pressure. <em>Journal of Chemical Physics 150, 164502</em> (2019).</div><div class="meta"><span class="tag">Spectroscopy &amp; scattering</span><span class="tag">Ionic liquids &amp; glass</span></div></div><div class="pub" data-topics="ionic" data-year="2018"><div class="cite"><span class="star" title="Selected publication">★</span>Communication: Glass Transition and Melting Lines of an Ionic Liquid (Cover &amp;amp; Editor's Pick). <em>Journal of Chemical Physics 148, 171101</em> (2018).</div><div class="meta"><span class="tag">Ionic liquids &amp; glass</span></div></div><div class="pub" data-topics="spec ionic" data-year="2017"><div class="cite"><span class="star" title="Selected publication">★</span>Phase Transitions of [C₂C₁im][NTf₂] under High Pressure: A Synchrotron X-ray Diffraction and Raman Microscopy Study. <em>Crystal Growth &amp; Design 17, 5384</em> (2017).</div><div class="meta"><span class="tag">Spectroscopy &amp; scattering</span><span class="tag">Ionic liquids &amp; glass</span></div></div></div></section>
+<section><div class="sec-head"><h2>Additional</h2></div><ul class="cv-list"><li>35+ peer-reviewed articles; Raman spectroscopy applied across 19 publications.</li><li>10+ oral talks and 20+ posters at international conferences (Brazil, USA, Argentina, Portugal, France, Ukraine).</li><li>Mentoring of undergraduate, graduate, and postdoctoral researchers.</li><li><strong>Patent:</strong> WO2024059060A1 — dyeing method for coloration of UHMWPE fiber.</li><li>Finalist (2023) &amp; Referee (2024), ScientistA Award; reviewer for Frontiers in Physics/Chemistry and Applied Physics Letters.</li></ul></section>
+</div><footer><div class="wrap">
+<div class="foot-links"><a href="mailto:lima.ta.phd@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a><a href="https://scholar.google.com/citations?hl=en&user=yfydUs8AAAAJ" target="_blank" rel="noopener" title="Google Scholar"><i class="fa-solid fa-graduation-cap"></i></a><a href="https://www.linkedin.com/in/thamires-a-lima/" target="_blank" rel="noopener" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a></div>
+<div>© 2026 Thamires Andrade Lima, Ph.D. · Philadelphia, PA.</div>
+</div></footer></body></html>
